@@ -1,0 +1,407 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+  int choix; //global variable who defined the choice in  my main  menu
+  int programme;
+
+
+  do{ //make a loop to close the menu when user select Quit
+
+      puts(" \n");
+
+      printf("██████╗ ██████╗  ██████╗      ██╗███████╗████████╗    ██╗███╗   ██╗███████╗ ██████╗ ██████╗ ███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ██╗   ██╗███████╗\n");
+      printf("██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝╚══██╔══╝    ██║████╗  ██║██╔════╝██╔═══██╗██╔══██╗████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗██║   ██║██╔════╝\n");
+      printf("██████╔╝██████╔╝██║   ██║     ██║█████╗     ██║       ██║██╔██╗ ██║█████╗  ██║   ██║██████╔╝██╔████╔██║███████║   ██║   ██║██║   ██║██║   ██║█████╗  \n");
+      printf("██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝     ██║       ██║██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██║╚██╔╝██║██╔══██║   ██║   ██║██║▄▄ ██║██║   ██║██╔══╝  \n");
+      printf("██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗   ██║       ██║██║ ╚████║██║     ╚██████╔╝██║  ██║██║ ╚═╝ ██║██║  ██║   ██║   ██║╚██████╔╝╚██████╔╝███████╗\n");
+      printf("╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝   ╚═╝       ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝\n");
+
+      puts(" \n");
+
+      printf("                                ██╗███████╗ ██████╗ ██╗   ██╗██████╗ ████████╗███████╗███████╗███╗   ██╗██╗  \n");
+      printf("                               ██╔╝██╔════╝██╔═══██╗██║   ██║██╔══██╗╚══██╔══╝██╔════╝██╔════╝████╗  ██║╚██╗\n");
+      printf("                              ██╔╝ █████╗  ██║   ██║██║   ██║██████╔╝   ██║   █████╗  █████╗  ██╔██╗ ██║ ╚██╗ \n");
+      printf("                              ╚██╗ ██╔══╝  ██║   ██║██║   ██║██╔══██╗   ██║   ██╔══╝  ██╔══╝  ██║╚██╗██║ ██╔╝\n");
+      printf("                                ██╗██║     ╚██████╔╝╚██████╔╝██║  ██║   ██║   ███████╗███████╗██║ ╚████║██╔╝  \n");
+      printf("                                ╚═╝╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝\n");
+
+      puts(" \n");
+
+      printf("                                                                     .......... \n");
+      printf("                                                                .......::::::....... \n");
+      printf("                                                            .......:::======:::....... \n");
+      printf("                                                          .......::===========::........ \n");
+      printf("                                                        ......::===####@@####===::......        ███████╗███████╗██╗████████╗███████╗ ██████╗    ██╗     ██╗\n");
+      printf("                                                       ......::===####@@@@####===::......       ██╔════╝██╔════╝██║╚══██╔══╝██╔════╝██╔════╝    ██║    ███║\n");
+      printf("                                                       .....::===####@@@@@@####===::.....        ████╗  ███████╗██║   ██║   █████╗  ██║         ██║    ╚██║\n");
+      printf("                                                       .....::===####@@@@@@####===::.....       ██╔══╝  ╚════██║██║   ██║   ██╔══╝  ██║         ██║     ██║\n");
+      printf("                                                        .....::===#####@@@@#####===::.....      ███████╗███████║██║   ██║   ███████╗╚██████╗    ███████╗██║\n");
+      printf("                                                         .....::===#####@@#####===::.....       ╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝    ╚══════╝╚═╝\n");
+      printf("                                                          .....::====########====::..... \n");
+      printf("                                                           .....::=====####=====::..... \n");
+      printf("                                                             ....::============::....       ██████╗  ██████╗ ██████╗  ██╗    ██╗██████╗  ██████╗ ██████╗ ██████╗ \n");
+      printf("                                                               ...::==========::...          ╚════██╗██╔═████╗╚════██╗███║   ██╔╝╚════██╗██╔═████╗╚════██╗╚════██╗\n");
+      printf("                                                                 ..::========::..           █████   ██║██╔██║ █████╔╝╚██║  ██╔╝  █████╔╝██║██╔██║ █████╔╝ █████╔╝\n");
+      printf("                                                                   |__________|             ██╔═══╝ ████╔╝██║██╔═══╝  ██║ ██╔╝  ██╔═══╝ ████╔╝██║██╔═══╝ ██╔═══╝  \n");
+      printf("                                                                   <__________>             ███████╗╚██████╔╝███████╗ ██║██╔╝   ███████╗╚██████╔╝███████╗███████╗\n");
+      printf("                                                                   <__________>             ╚══════╝ ╚═════╝ ╚══════╝ ╚═╝╚═╝    ╚══════╝ ╚═════╝ ╚══════╝╚══════╝\n");
+      printf("                                                                   <__________> \n");
+      /* printf("""                                                                      \/ \n");*/
+
+      puts(" \n");
+      puts(" \n");
+
+
+
+      printf("                                              __| |____________________________________________| |__ \n");
+      printf("                                             (__   ____________________________________________   __)\n");
+      printf("                                                | | ENTREZ LES NUMÉROS CORRESPONDANT POUR      | |   \n");
+      printf("                                                | | EFFECTUER VOTRE CHOIX                      | |   \n");
+      printf("                                                | |                                            | |   \n");
+      printf("                                                | | 0- COMMENCER                               | |   \n");
+      printf("                                                | | 1- BONUS                                   | |   \n");
+      printf("                                                | | 2- À PROPOS                                | |   \n");
+      printf("                                                | | 3- QUITTER                                 | |   \n");
+      printf("                                              __| |____________________________________________| |__ \n");
+      printf("                                             (__   ____________________________________________   __)\n");
+      printf("                                                | |                                            | |   \n");
+
+
+
+
+      printf("VOTRE CHOIX:\n");
+
+      printf("-------------------\n");
+      printf("\t");
+      scanf("%d", &choix);
+      printf("-------------------\n");
+
+      while(choix<0 || choix>3){
+        printf("VEUILLEZ FAIRE UN CHOIX VALABLE:\n");
+
+	printf("-------------------\n");
+	printf("\t");
+        scanf("%d", &choix);
+	printf("-------------------\n");
+      }
+
+      switch(choix){
+
+        case 0:
+            do{
+
+            printf("\a");
+            printf("\e[1;1H\e[2J"); //regex method to clean the consol it's fast than a system("clear")
+                             
+            printf("                                                   _____________________________________________  \n");
+            printf("                                                 /  |                                           |. \n");
+            printf("                                                |   | 1-                                        |.\n");
+            printf("                                                 |_ |                                           |.\n");
+            printf("                                                    | 2-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 3-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 4-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 5-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 6-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 7-                                        |.\n") ;
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 8-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    | 9-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |10-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |11-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |12-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |13-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |14-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |15-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |16-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |17-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |18-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |19-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |20-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |21-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |22-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |23-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |24-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |25-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |26-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |27-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |28-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |29-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |30-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |31-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |32-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |33-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |34-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |35-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |36-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |37-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |38-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |39-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |40-                                        |.\n");
+            printf("                                                    |                                           |.\n");
+            printf("                                                    |   _________________________________________ \n");
+            printf("                                                    |  /                                        /. \n");
+            printf("                                                    |_/________________________________________/. \n");
+  
+            puts("\n");
+            puts("\n");
+
+	    printf("                                   .-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n");
+            printf("                                   |                                                                       |\n");
+            printf("                                   |      < FOURTEEN> EST UNE COMPILATION D'EXERCICE DE LANGAGE C.         |\n");
+            printf("                                   |                                                                       |\n");
+            printf("                                   |       ENTREZ LE NUMÉROS DU PROGRAMME QUE VOUS SOUHAITER EXÉCUTER.     |\n");
+            printf("                                   |               (ENTREZ 0 POUR REVENIR AU MENNU PRÉCÉDENT)              |\n");
+            printf("                                   `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-----'\n");
+  
+            printf("Entrez le programme à exécuter: ");
+            scanf("%d", &programme);
+	   
+            switch(programme){
+              case 0:
+                printf("Entrez x et y");
+		int x,y;
+   
+                scanf("%d%d",&x,&y);
+                  
+                if(x<y)
+                printf("%d %d", x,y);
+                else
+                printf("%d %d", y,x);
+
+              break;
+
+                case 1:break;
+                case 2:break;
+                case 3:break;
+                case 4:break;
+                case 5:break;
+                case 6:break;
+                case 7:break;
+                case 8:break;
+                case 9:break;
+                case 10:break;
+                case 11:break;
+                case 12:break;
+                case 13:break;
+                case 14:break;
+                case 15:break;
+                case 16:break;
+                case 17:break;
+                case 18:break;
+                case 19:break;
+                case 20:break;
+                case 21:break;
+                case 22:break;
+                case 23:break;
+                case 24:break;
+                case 25:break;
+                case 26:break;
+                case 27:break;
+                case 28:break;
+                case 29:break;
+                case 30:break;
+                case 31:break;
+                case 32:break;
+                case 33:break;
+                case 34:break;
+                case 35:break;
+                case 36:break;
+                case 37:break;
+                case 38:break;
+                case 39:break;
+                case 40:break;
+              }
+            } while (programme!=0)
+
+        case 1:
+          printf("\a");
+          int choixUn; //local variable who define the choice just in the case 1 statement
+
+          printf("█████▄  ▄▄▄       ██▀███   ██ ▄█▀ ██▀███   ▄▄▄       ██▓     ██████ ▄▄▄█████▓ █    ██   █████▒ █████▒\n");
+          printf("██▀ ██▌▒████▄    ▓██ ▒ ██▒ ██▄█▒ ▓██ ▒ ██▒▒████▄    ▓██▒   ▒██    ▒ ▓  ██▒ ▓▒ ██  ▓██▒▓██   ▒▓██   ▒ \n");
+          printf("██   █▌▒██  ▀█▄  ▓██ ░▄█ ▒▓███▄░ ▓██ ░▄█ ▒▒██  ▀█▄  ▒██▒   ░ ▓██▄   ▒ ▓██░ ▒░▓██  ▒██░▒████ ░▒████ ░ \n");
+          printf("▓█▄   ▌░██▄▄▄▄██ ▒██▀▀█▄  ▓██ █▄ ▒██▀▀█▄  ░██▄▄▄▄██ ░██░     ▒   ██▒░ ▓██▓ ░ ▓▓█  ░██░░▓█▒  ░░▓█▒  ░ \n");
+          printf("░▒████▓  ▓█   ▓██▒░██▓ ▒██▒▒██▒ █▄░██▓ ▒██▒ ▓█   ▓██▒░██░   ▒██████▒▒  ▒██▒ ░ ▒▒█████▓ ░▒█░   ░▒█░    \n");;
+          printf("▒▒▓  ▒  ▒▒   ▓▒█░░ ▒▓ ░▒▓░▒ ▒▒ ▓▒░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░▓     ▒ ▒▓▒ ▒ ░  ▒ ░░   ░▒▓▒ ▒ ▒  ▒ ░    ▒ ░\n");
+          printf("░ ▒  ▒   ▒   ▒▒ ░  ░▒ ░ ▒░░ ░▒ ▒░  ░▒ ░ ▒░  ▒   ▒▒ ░ ▒ ░   ░ ░▒  ░ ░    ░    ░░▒░ ░ ░  ░      ░  \n");
+          printf("░ ░  ░   ░   ▒     ░░   ░ ░ ░░ ░   ░░   ░   ░   ▒    ▒ ░   ░  ░  ░    ░       ░░░ ░ ░  ░ ░    ░ ░\n");
+          printf("  ░          ░  ░   ░     ░  ░      ░           ░  ░ ░           ░              ░                \n");
+          printf("░                                                                                                \n");
+
+          puts(" \n");
+          puts(" \n");
+
+          printf("                     _| |____________________________________________| |__ \n");
+          printf("                    (__  ____________________________________________   __)\n");
+          printf("                      | |          JOUONS À UN JEU                   | |   \n");
+          printf("                      | |                                            | |   \n");
+          printf("                      | |Tu a 5 essaie pour trouver le nombre auquel | |   \n");
+          printf("                      | |je pense entre 0 et 100. Tu est chaud?      | |   \n");
+          printf("                      | |                                            | |   \n");
+          printf("                      | |                                            | |   \n");
+          printf("                      | |0-NON                           1-OUI       | |   \n");
+          printf("                    __| |____________________________________________| |__ \n");
+          printf("                   (__   ____________________________________________   __)\n");
+          printf("                      | |                                            | |   \n");
+
+
+
+          printf("VOTRE CHOIX: ");
+          scanf("%d", &choixUn);
+
+          puts(" \n");
+          puts(" \n");
+
+          if(choixUn == 1){
+
+            int nombre = 0;
+            int essaie;
+            int essaiemax = 0;
+
+            nombre = rand() % (100 + 1);
+
+            while (essaie != nombre){
+              printf("Entrez un nombre ");
+              scanf("%d",&essaie);
+              essaiemax++;
+
+              if(essaie < nombre){
+                printf("Plus grand! \n");
+              }
+
+              if(essaie > nombre){
+            printf("Plus petit! \n");
+              }
+
+              if(essaiemax == 5){
+            printf("PERDU!"); break;
+              }
+
+              if(essaie == nombre){
+            printf("Gagner!");break;
+              }
+            }
+          }
+
+           if(choixUn == 0){
+             printf("\e[1;1H\e[2J"); //regex method to clean the consol it's fast than a system("clear")
+            choix = 4;
+            }
+
+        break;
+
+        case 2:
+          printf("\a");
+          int choixDeux; //local variable who define the choice just in the case 1 statement
+
+          printf("█████▄  ▄▄▄       ██▀███   ██ ▄█▀ ██▀███   ▄▄▄       ██▓     ██████ ▄▄▄█████▓ █    ██   █████▒ █████▒\n");
+          printf("██▀ ██▌▒████▄    ▓██ ▒ ██▒ ██▄█▒ ▓██ ▒ ██▒▒████▄    ▓██▒   ▒██    ▒ ▓  ██▒ ▓▒ ██  ▓██▒▓██   ▒▓██   ▒ \n");
+          printf("██   █▌▒██  ▀█▄  ▓██ ░▄█ ▒▓███▄░ ▓██ ░▄█ ▒▒██  ▀█▄  ▒██▒   ░ ▓██▄   ▒ ▓██░ ▒░▓██  ▒██░▒████ ░▒████ ░ \n");
+          printf("▓█▄   ▌░██▄▄▄▄██ ▒██▀▀█▄  ▓██ █▄ ▒██▀▀█▄  ░██▄▄▄▄██ ░██░     ▒   ██▒░ ▓██▓ ░ ▓▓█  ░██░░▓█▒  ░░▓█▒  ░ \n");
+          printf("░▒████▓  ▓█   ▓██▒░██▓ ▒██▒▒██▒ █▄░██▓ ▒██▒ ▓█   ▓██▒░██░   ▒██████▒▒  ▒██▒ ░ ▒▒█████▓ ░▒█░   ░▒█░    \n");;
+          printf("▒▒▓  ▒  ▒▒   ▓▒█░░ ▒▓ ░▒▓░▒ ▒▒ ▓▒░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░▓     ▒ ▒▓▒ ▒ ░  ▒ ░░   ░▒▓▒ ▒ ▒  ▒ ░    ▒ ░\n");
+          printf("░ ▒  ▒   ▒   ▒▒ ░  ░▒ ░ ▒░░ ░▒ ▒░  ░▒ ░ ▒░  ▒   ▒▒ ░ ▒ ░   ░ ░▒  ░ ░    ░    ░░▒░ ░ ░  ░      ░  \n");
+          printf("░ ░  ░   ░   ▒     ░░   ░ ░ ░░ ░   ░░   ░   ░   ▒    ▒ ░   ░  ░  ░    ░       ░░░ ░ ░  ░ ░    ░ ░\n");
+          printf("  ░          ░  ░   ░     ░  ░      ░           ░  ░ ░           ░              ░                \n");
+          printf("░                                                                                                \n");
+
+          puts(" \n");
+          puts(" \n");
+
+          printf("                     _| |____________________________________________| |__ \n");
+          printf("                    (__   ____________________________________________   __)\n");
+          printf("                      | | EDIT BY DARKRAI                            | |   \n");
+          printf("                      | | DESIGNED BY DARKRAI                        | |   \n");
+          printf("                      | | CODE BY DARKRAI                            | |   \n");
+          printf("                      | |                                            | |   \n");
+          printf("                      | |is(DARKRAI) == (ALEX); .... TRUE;           | |   \n");
+          printf("                      | |is(ALEX)>>>>>ALL; ...... ABSOLUTLY TRUE :)  | |   \n");
+          printf("                      | |                                            | |   \n");
+          printf("                      | |0-Précédent                   1-QUITTER     | |   \n");
+          printf("                    __| |____________________________________________| |__ \n");
+          printf("                   (__   ____________________________________________   __)\n");
+          printf("                      | |                                            | |   \n");
+
+
+
+          printf("VOTRE CHOIX: ");
+          scanf("%d", &choixDeux);
+
+          puts(" \n");
+          puts(" \n");
+
+          if(choixDeux == 1){
+            choixDeux = 0;
+            choix = 3;
+          }
+
+          if(choixDeux == 0){
+             printf("\e[1;1H\e[2J"); //regex method to clean the consol it's fast than a system("clear")
+            choix = 4;
+          }
+
+        break;
+
+        case 3:
+          printf("\a");
+          printf("\e[1;1H\e[2J"); //regex method to clean the consol it's fast than a system("clear")
+
+          printf("                         d8888 888     888      8888888b.  8888888888 888     888  .d88888b. 8888888 888888888b      \n");
+          printf("                        d88888 888     888      888   Y88b 888        888     888 d88P   Y88b  888   888   Y88b      \n");
+          printf("                       d88P888 888     888      888    888 888        888     888 888     888  888   888    888      \n");
+          printf("                      d88P 888 888     888      888   d88P 8888888    Y88b   d88P 888     888  888   888   d88P      \n");
+          printf("                     d88P  888 888     888      8888888P   888         Y88b d88P  888     888  888   8888888P        \n");
+          printf("                    d88P   888 888     888      888 T88b   888          Y88o88P   888     888  888   888 T88b        \n");
+          printf("                   d8888888888 Y88b. .d88P      888  T88b  888           Y888P    Y88b. .d88P  888   888  T88b       \n");
+          printf("                  d88P     888  'Y88888P'       888   T88b 8888888888     Y8P      'Y88888P' 8888888 888   T88b      \n");
+
+          puts(" \n");
+          puts(" \n");
+          
+        break;
+
+      }
+    }while(choix!=3); //define condition to close the loop
+
+    return 0;
+}
+
